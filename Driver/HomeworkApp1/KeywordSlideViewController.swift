@@ -22,14 +22,14 @@ final class KeywordSlideViewController: UIViewController {
 			////
 			
 			if let s = keywordString {
-				let	t	=	Client.fetchImageURLs(s, completion: { [unowned self](imageURLs:[NSURL]?) -> () in
+				let	t	=	Client.fetchImageURLs(s, completion: { [unowned self](imageItems:[Client.ImageItem]?) -> () in
 					dispatch_async(dispatch_get_main_queue()) {
 						Debug.assertMainThread()
 						
-						if let us = imageURLs {
-							self.slideVC.queueImageURLs(us)
+						if let vs = imageItems {
+							self.slideVC.queueImageItems(vs)
 						} else {
-							UIAlertView(title: nil, message: "Could not download image list.", delegate: nil, cancelButtonTitle: "Close")
+							UIAlertView(title: nil, message: "Could not download image list.", delegate: nil, cancelButtonTitle: "Close").show()
 						}
 					}
 				})
@@ -39,14 +39,13 @@ final class KeywordSlideViewController: UIViewController {
 		}
 	}
 	
-//	override var navigationItem:UINavigationItem {
-//		get {
-//			return	slideVC.navigationItem
-//		}
-//	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		self.edgesForExtendedLayout					=	UIRectEdge.All
+		self.extendedLayoutIncludesOpaqueBars		=	true
+		self.automaticallyAdjustsScrollViewInsets	=	false
 		
 		self.view.addSubview(slideVC.view)
 		self.addChildViewController(slideVC)
@@ -58,6 +57,11 @@ final class KeywordSlideViewController: UIViewController {
 			])
 		
 		navigationItem.rightBarButtonItem	=	slideVC.navigationItem.rightBarButtonItem
+		
+		////
+		
+		internals.owner		=	self
+		slideVC.delegate	=	internals
 	}
 	override func viewWillDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
@@ -67,6 +71,7 @@ final class KeywordSlideViewController: UIViewController {
 	
 	////
 	
+	private let internals		=	InternalController()
 	private let	slideVC			=	SlideViewController3()
 	private var transmission	=	nil as Transmission?
 }
@@ -86,14 +91,14 @@ final class KeywordSlideViewController: UIViewController {
 
 
 
-
-
-
-
-
-
-
-
+private final class InternalController {
+	weak var owner: KeywordSlideViewController?
+}
+extension InternalController: SlideViewController3Delegate {
+	func slideViewController3DidChangeTitle(s:String) {
+		owner!.navigationItem.title	=	s
+	}
+}
 
 
 

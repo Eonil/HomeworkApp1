@@ -18,9 +18,12 @@ final class KeyworkdInputFormViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.view.backgroundColor		=	UIColor.whiteColor()
+		self.view.backgroundColor			=	UIColor.whiteColor()
+		self.navigationItem.title			=	"Homework 1"
 		
-		userInputTextField.borderStyle	=	UITextBorderStyle.RoundedRect
+		userInputTextField.placeholder		=	"Type keyword to search. (e.g. 'cat')"
+		userInputTextField.returnKeyType	=	UIReturnKeyType.Google
+		userInputTextField.borderStyle		=	UITextBorderStyle.RoundedRect
 		userInputTextField.setTranslatesAutoresizingMaskIntoConstraints(false)
 		
 		if userInputTextField.superview == nil {
@@ -81,8 +84,8 @@ private class ReactionController: NSObject, UITextFieldDelegate {
 	
 	@objc
 	func textFieldDidEndEditing(textField: UITextField) {
-		let	nc								=	UINavigationController()
-		let	vc								=	KeywordSlideViewController()
+		let	nc	=	UINavigationController()
+		let	vc	=	KeywordSlideViewController()
 		vc.navigationItem.leftBarButtonItem	=	UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "userDidTapDoneButton:")
 		vc.keywordString					=	textField.text
 		nc.pushViewController(vc, animated: false)
@@ -96,6 +99,14 @@ private class ReactionController: NSObject, UITextFieldDelegate {
 		})
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

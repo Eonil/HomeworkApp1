@@ -17,6 +17,7 @@
 		45461CD01A9F61D100AD2CAB /* KeywordSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461CCF1A9F61D100AD2CAB /* KeywordSlideViewController.swift */; };
 		45461CE71A9F691700AD2CAB /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461CE61A9F691700AD2CAB /* Debug.swift */; };
 		45461D051A9F707100AD2CAB /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D041A9F707100AD2CAB /* Operators.swift */; };
+		45461D071A9F758B00AD2CAB /* ValueShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D061A9F758B00AD2CAB /* ValueShuffler.swift */; };
 		4565DD501A9F585100AD6BEB /* SlideViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565DD4F1A9F585100AD6BEB /* SlideViewController3.swift */; };
 		4565DD521A9F59A900AD6BEB /* SlidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565DD511A9F59A900AD6BEB /* SlidePageViewController.swift */; };
 		4575665D1A9F5BE8004547B6 /* Standards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B480641A9EDACB00A219A3 /* Standards.framework */; };
@@ -46,8 +47,6 @@
 		459334681A9F096E003D7F75 /* PhotoSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459334641A9F08A9003D7F75 /* PhotoSlideViewController.swift */; };
 		4593346A1A9F15CE003D7F75 /* SlideShowNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459334691A9F15CE003D7F75 /* SlideShowNavigationController.swift */; };
 		459334D61A9F2048003D7F75 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459334D51A9F2048003D7F75 /* SlideViewController.swift */; };
-		45B480261A9EC2CB00A219A3 /* KenBurns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B480251A9EC2C700A219A3 /* KenBurns.framework */; };
-		45B480271A9EC2CB00A219A3 /* KenBurns.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B480251A9EC2C700A219A3 /* KenBurns.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45B480301A9EC3F100A219A3 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45B4802F1A9EC3F100A219A3 /* sample1.jpg */; };
 		45B480521A9ED4EA00A219A3 /* Client.GooglePhotoSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B480511A9ED4EA00A219A3 /* Client.GooglePhotoSearch.swift */; };
 		45B480551A9ED9D900A219A3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B480541A9ED9D900A219A3 /* API.swift */; };
@@ -71,27 +70,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 45863BEA1A9EB3DF00749E43;
 			remoteInfo = HomeworkApp1;
-		};
-		45B480221A9EC2C700A219A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45B4801D1A9EC2C700A219A3 /* KenBurns.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 42B17963142CCBE3006D5610;
-			remoteInfo = KenBurnsDemo;
-		};
-		45B480241A9EC2C700A219A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45B4801D1A9EC2C700A219A3 /* KenBurns.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45863C1A1A9EBB9F00749E43;
-			remoteInfo = KenBurns;
-		};
-		45B480281A9EC2CB00A219A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45B4801D1A9EC2C700A219A3 /* KenBurns.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45863C191A9EBB9F00749E43;
-			remoteInfo = KenBurns;
 		};
 		45B4805F1A9EDACB00A219A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -155,7 +133,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				45B480271A9EC2CB00A219A3 /* KenBurns.framework in Embed Frameworks */,
 				45B4806E1A9EDAD900A219A3 /* Standards.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -173,6 +150,7 @@
 		45461CCF1A9F61D100AD2CAB /* KeywordSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeywordSlideViewController.swift; sourceTree = "<group>"; };
 		45461CE61A9F691700AD2CAB /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		45461D041A9F707100AD2CAB /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		45461D061A9F758B00AD2CAB /* ValueShuffler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueShuffler.swift; sourceTree = "<group>"; };
 		4565DD4F1A9F585100AD6BEB /* SlideViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController3.swift; sourceTree = "<group>"; };
 		4565DD511A9F59A900AD6BEB /* SlidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePageViewController.swift; sourceTree = "<group>"; };
 		45863BEB1A9EB3DF00749E43 /* HomeworkApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +176,6 @@
 		459334641A9F08A9003D7F75 /* PhotoSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSlideViewController.swift; sourceTree = "<group>"; };
 		459334691A9F15CE003D7F75 /* SlideShowNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideShowNavigationController.swift; sourceTree = "<group>"; };
 		459334D51A9F2048003D7F75 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
-		45B4801D1A9EC2C700A219A3 /* KenBurns.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KenBurns.xcodeproj; path = ../Modules/JBKenBurns/KenBurns.xcodeproj; sourceTree = "<group>"; };
 		45B4802F1A9EC3F100A219A3 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
 		45B480511A9ED4EA00A219A3 /* Client.GooglePhotoSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.GooglePhotoSearch.swift; sourceTree = "<group>"; };
 		45B480541A9ED9D900A219A3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -211,7 +188,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B480261A9EC2CB00A219A3 /* KenBurns.framework in Frameworks */,
 				45B4806D1A9EDAD900A219A3 /* Standards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +218,6 @@
 				45863C021A9EB3E000749E43 /* HomeworkApp1Tests */,
 				459334361A9EFF25003D7F75 /* Workbench1 */,
 				45B480561A9EDACA00A219A3 /* Standards.xcodeproj */,
-				45B4801D1A9EC2C700A219A3 /* KenBurns.xcodeproj */,
 				45863BCA1A9EB3BC00749E43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,6 +240,7 @@
 				45461CCF1A9F61D100AD2CAB /* KeywordSlideViewController.swift */,
 				4565DD4F1A9F585100AD6BEB /* SlideViewController3.swift */,
 				4565DD511A9F59A900AD6BEB /* SlidePageViewController.swift */,
+				45461D061A9F758B00AD2CAB /* ValueShuffler.swift */,
 				4588D3411A9EE98C0085A4A4 /* Client.swift */,
 				45B480511A9ED4EA00A219A3 /* Client.GooglePhotoSearch.swift */,
 				45B480541A9ED9D900A219A3 /* API.swift */,
@@ -344,15 +320,6 @@
 			name = "(junkyard)";
 			sourceTree = "<group>";
 		};
-		45B4801E1A9EC2C700A219A3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				45B480231A9EC2C700A219A3 /* KenBurnsDemo.app */,
-				45B480251A9EC2C700A219A3 /* KenBurns.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		45B480571A9EDACA00A219A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,7 +347,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				45B480291A9EC2CB00A219A3 /* PBXTargetDependency */,
 				45B480701A9EDAD900A219A3 /* PBXTargetDependency */,
 			);
 			name = HomeworkApp1;
@@ -458,10 +424,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 45B4801E1A9EC2C700A219A3 /* Products */;
-					ProjectRef = 45B4801D1A9EC2C700A219A3 /* KenBurns.xcodeproj */;
-				},
-				{
 					ProductGroup = 45B480571A9EDACA00A219A3 /* Products */;
 					ProjectRef = 45B480561A9EDACA00A219A3 /* Standards.xcodeproj */;
 				},
@@ -476,20 +438,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		45B480231A9EC2C700A219A3 /* KenBurnsDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = KenBurnsDemo.app;
-			remoteRef = 45B480221A9EC2C700A219A3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45B480251A9EC2C700A219A3 /* KenBurns.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KenBurns.framework;
-			remoteRef = 45B480241A9EC2C700A219A3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		45B480601A9EDACB00A219A3 /* Standards.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -570,6 +518,7 @@
 				45863C101A9EB56500749E43 /* KeyworkInputFormViewController.swift in Sources */,
 				459334D61A9F2048003D7F75 /* SlideViewController.swift in Sources */,
 				45B480521A9ED4EA00A219A3 /* Client.GooglePhotoSearch.swift in Sources */,
+				45461D071A9F758B00AD2CAB /* ValueShuffler.swift in Sources */,
 				459334651A9F08A9003D7F75 /* PhotoSlideViewController.swift in Sources */,
 				4565DD501A9F585100AD6BEB /* SlideViewController3.swift in Sources */,
 				45863C121A9EB57C00749E43 /* SlideShowViewController.swift in Sources */,
@@ -627,11 +576,6 @@
 			isa = PBXTargetDependency;
 			target = 45863BEA1A9EB3DF00749E43 /* HomeworkApp1 */;
 			targetProxy = 45863C001A9EB3E000749E43 /* PBXContainerItemProxy */;
-		};
-		45B480291A9EC2CB00A219A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KenBurns;
-			targetProxy = 45B480281A9EC2CB00A219A3 /* PBXContainerItemProxy */;
 		};
 		45B480701A9EDAD900A219A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
