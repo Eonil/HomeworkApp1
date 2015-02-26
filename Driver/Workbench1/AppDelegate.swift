@@ -21,16 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let	u4			=	NSBundle.mainBundle().URLForResource("d", withExtension: "png")!
 		let	u5			=	NSBundle.mainBundle().URLForResource("e", withExtension: "gif")!
 		let	us			=	[u1, u2, u3, u4, u5]
+		let	ms			=	us.map({ u in Client.ImageItem(title: "Test1", URL:u) })
 		
+		let	nc			=	UINavigationController()
 		let	vc			=	SlideViewController3()
-		vc.queueImageURLs(us)
+		nc.pushViewController(vc, animated: false)
+		vc.queueImageItems(ms)
 		window!.makeKeyAndVisible()
-		window!.rootViewController	=	vc
-
-//		let	vc		=	VC3()
-//		window!.makeKeyAndVisible()
-//		window!.rootViewController	=	vc
-
+		window!.rootViewController	=	nc
+		
 		return true
 	}
 

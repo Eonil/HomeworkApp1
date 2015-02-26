@@ -18,6 +18,13 @@
 		45461CE71A9F691700AD2CAB /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461CE61A9F691700AD2CAB /* Debug.swift */; };
 		45461D051A9F707100AD2CAB /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D041A9F707100AD2CAB /* Operators.swift */; };
 		45461D071A9F758B00AD2CAB /* ValueShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D061A9F758B00AD2CAB /* ValueShuffler.swift */; };
+		45461D081A9F924600AD2CAB /* KeyworkInputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45863C0F1A9EB56500749E43 /* KeyworkInputFormViewController.swift */; };
+		45461D091A9F924600AD2CAB /* KeywordSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461CCF1A9F61D100AD2CAB /* KeywordSlideViewController.swift */; };
+		45461D0A1A9F924600AD2CAB /* ValueShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D061A9F758B00AD2CAB /* ValueShuffler.swift */; };
+		45461D0B1A9F924600AD2CAB /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461CE61A9F691700AD2CAB /* Debug.swift */; };
+		45461D0C1A9F924600AD2CAB /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D041A9F707100AD2CAB /* Operators.swift */; };
+		45461D1C1A9F941700AD2CAB /* EonilText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45461D191A9F941300AD2CAB /* EonilText.framework */; };
+		45461D1D1A9F941700AD2CAB /* EonilText.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45461D191A9F941300AD2CAB /* EonilText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4565DD501A9F585100AD6BEB /* SlideViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565DD4F1A9F585100AD6BEB /* SlideViewController3.swift */; };
 		4565DD521A9F59A900AD6BEB /* SlidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4565DD511A9F59A900AD6BEB /* SlidePageViewController.swift */; };
 		4575665D1A9F5BE8004547B6 /* Standards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B480641A9EDACB00A219A3 /* Standards.framework */; };
@@ -57,6 +64,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		45461D161A9F941300AD2CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45461D101A9F941300AD2CAB /* Text.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45641AC919F0D52200381269;
+			remoteInfo = "Text OSX";
+		};
+		45461D181A9F941300AD2CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45461D101A9F941300AD2CAB /* Text.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4584D80319F18D930093E2B1;
+			remoteInfo = "Text iOS";
+		};
+		45461D1A1A9F941300AD2CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45461D101A9F941300AD2CAB /* Text.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D987A019ECE38C00B96829;
+			remoteInfo = "Text OSX Test";
+		};
+		45461D1E1A9F941700AD2CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45461D101A9F941300AD2CAB /* Text.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4584D80219F18D930093E2B1;
+			remoteInfo = "Text iOS";
+		};
 		4575665F1A9F5BE8004547B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45B480561A9EDACA00A219A3 /* Standards.xcodeproj */;
@@ -134,6 +169,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				45B4806E1A9EDAD900A219A3 /* Standards.framework in Embed Frameworks */,
+				45461D1D1A9F941700AD2CAB /* EonilText.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +187,7 @@
 		45461CE61A9F691700AD2CAB /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		45461D041A9F707100AD2CAB /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		45461D061A9F758B00AD2CAB /* ValueShuffler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueShuffler.swift; sourceTree = "<group>"; };
+		45461D101A9F941300AD2CAB /* Text.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Text.xcodeproj; path = ../Modules/Monolith/Text/Text.xcodeproj; sourceTree = "<group>"; };
 		4565DD4F1A9F585100AD6BEB /* SlideViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController3.swift; sourceTree = "<group>"; };
 		4565DD511A9F59A900AD6BEB /* SlidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidePageViewController.swift; sourceTree = "<group>"; };
 		45863BEB1A9EB3DF00749E43 /* HomeworkApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B4806D1A9EDAD900A219A3 /* Standards.framework in Frameworks */,
+				45461D1C1A9F941700AD2CAB /* EonilText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +248,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45461D111A9F941300AD2CAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45461D171A9F941300AD2CAB /* EonilText.framework */,
+				45461D191A9F941300AD2CAB /* EonilText.framework */,
+				45461D1B1A9F941300AD2CAB /* EonilTextTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		45863BBE1A9EB3B100749E43 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +266,7 @@
 				45863C021A9EB3E000749E43 /* HomeworkApp1Tests */,
 				459334361A9EFF25003D7F75 /* Workbench1 */,
 				45B480561A9EDACA00A219A3 /* Standards.xcodeproj */,
+				45461D101A9F941300AD2CAB /* Text.xcodeproj */,
 				45863BCA1A9EB3BC00749E43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -348,6 +397,7 @@
 			);
 			dependencies = (
 				45B480701A9EDAD900A219A3 /* PBXTargetDependency */,
+				45461D1F1A9F941700AD2CAB /* PBXTargetDependency */,
 			);
 			name = HomeworkApp1;
 			productName = HomeworkApp1;
@@ -427,6 +477,10 @@
 					ProductGroup = 45B480571A9EDACA00A219A3 /* Products */;
 					ProjectRef = 45B480561A9EDACA00A219A3 /* Standards.xcodeproj */;
 				},
+				{
+					ProductGroup = 45461D111A9F941300AD2CAB /* Products */;
+					ProjectRef = 45461D101A9F941300AD2CAB /* Text.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -438,6 +492,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		45461D171A9F941300AD2CAB /* EonilText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EonilText.framework;
+			remoteRef = 45461D161A9F941300AD2CAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45461D191A9F941300AD2CAB /* EonilText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EonilText.framework;
+			remoteRef = 45461D181A9F941300AD2CAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45461D1B1A9F941300AD2CAB /* EonilTextTest */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = EonilTextTest;
+			remoteRef = 45461D1A1A9F941300AD2CAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		45B480601A9EDACB00A219A3 /* Standards.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -547,16 +622,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45461D091A9F924600AD2CAB /* KeywordSlideViewController.swift in Sources */,
 				4593343A1A9EFF25003D7F75 /* AppDelegate.swift in Sources */,
 				459334571A9EFF31003D7F75 /* OnlineKeywordPhotoSlideViewController.swift in Sources */,
 				4593345A1A9F0636003D7F75 /* Client.swift in Sources */,
+				45461D081A9F924600AD2CAB /* KeyworkInputFormViewController.swift in Sources */,
 				459334681A9F096E003D7F75 /* PhotoSlideViewController.swift in Sources */,
+				45461D0C1A9F924600AD2CAB /* Operators.swift in Sources */,
 				45BF16E11A9F22BA006A9C89 /* SlideViewController.swift in Sources */,
 				457566631A9F5C0A004547B6 /* SlideViewController3.swift in Sources */,
+				45461D0A1A9F924600AD2CAB /* ValueShuffler.swift in Sources */,
 				4593345B1A9F0636003D7F75 /* Client.GooglePhotoSearch.swift in Sources */,
 				453D7BEA1A9F511B00DCB80E /* VC3.swift in Sources */,
 				453D7BE41A9F4E6500DCB80E /* RotatingPagingScrollViewController.swift in Sources */,
 				453D7BE61A9F4E8000DCB80E /* ScrollViewController.swift in Sources */,
+				45461D0B1A9F924600AD2CAB /* Debug.swift in Sources */,
 				4593345C1A9F0636003D7F75 /* API.swift in Sources */,
 				457566641A9F5C0A004547B6 /* SlidePageViewController.swift in Sources */,
 				4593345D1A9F0636003D7F75 /* API.JSONConversion.swift in Sources */,
@@ -567,6 +647,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		45461D1F1A9F941700AD2CAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Text iOS";
+			targetProxy = 45461D1E1A9F941700AD2CAB /* PBXContainerItemProxy */;
+		};
 		457566601A9F5BE8004547B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Standards iOS";
@@ -632,6 +717,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Eonil/Workshop/Temp/Xcode/Derivations/HomeworkApp1-eludtdyzyehileekqtnbbbdjoznj/Build/Products/Debug",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -683,6 +772,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Eonil/Workshop/Temp/Xcode/Derivations/HomeworkApp1-eludtdyzyehileekqtnbbbdjoznj/Build/Products/Debug",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -719,6 +812,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -741,7 +835,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = HomeworkApp1Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -769,6 +863,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -785,7 +880,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = HomeworkApp1Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -833,7 +928,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Workbench1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -876,7 +971,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Workbench1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -21,9 +21,6 @@ final class SlidePageViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//		let	a	=	CGFloat(abs(rand())) / CGFloat(abs(RAND_MAX)) + 0.2
-//		self.view.backgroundColor	=	UIColor.brownColor().colorWithAlphaComponent(a)
-		
 		imageView.contentMode	=	UIViewContentMode.ScaleAspectFill
 		imageView.clipsToBounds	=	true
 		imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
