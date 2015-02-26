@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42AC447A148BA08300F76C22 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC4476148BA08300F76C22 /* ExampleViewController.m */; };
+		42AC447B148BA08300F76C22 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4477148BA08300F76C22 /* ExampleViewController.xib */; };
+		42AC447C148BA08300F76C22 /* KenBurnsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC4479148BA08300F76C22 /* KenBurnsAppDelegate.m */; };
+		42AC4480148BA0F500F76C22 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AC447E148BA0F500F76C22 /* MainWindow.xib */; };
+		42AC4483148BA10400F76C22 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC4482148BA10400F76C22 /* JBKenBurnsView.m */; };
+		42AC4489148BA12300F76C22 /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4484148BA12300F76C22 /* image1.jpeg */; };
+		42AC448A148BA12300F76C22 /* image2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4485148BA12300F76C22 /* image2.jpeg */; };
+		42AC448B148BA12300F76C22 /* image3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4486148BA12300F76C22 /* image3.jpeg */; };
+		42AC448C148BA12300F76C22 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4487148BA12300F76C22 /* image4.png */; };
+		42AC448D148BA12300F76C22 /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4488148BA12300F76C22 /* image5.png */; };
+		42AC4499148BA27C00F76C22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42AC4497148BA27C00F76C22 /* InfoPlist.strings */; };
+		42B17968142CCBE3006D5610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B17967142CCBE3006D5610 /* UIKit.framework */; };
+		42B1796A142CCBE3006D5610 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B17969142CCBE3006D5610 /* Foundation.framework */; };
+		42B1796C142CCBE3006D5610 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B1796B142CCBE3006D5610 /* CoreGraphics.framework */; };
+		42B17994142CD2EA006D5610 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B17993142CD2EA006D5610 /* QuartzCore.framework */; };
+		42BF1B5419601D7000DEB5E2 /* image0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42BF1B5319601D7000DEB5E2 /* image0.jpg */; };
+		42DBE1EE148B9E7A00A0D5B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBE1EA148B9E7A00A0D5B1 /* main.m */; };
+		45863C1F1A9EBB9F00749E43 /* KenBurns.h in Headers */ = {isa = PBXBuildFile; fileRef = 45863C1E1A9EBB9F00749E43 /* KenBurns.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45863C311A9EBBA000749E43 /* KenBurns.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45863C1A1A9EBB9F00749E43 /* KenBurns.framework */; };
+		45863C321A9EBBA000749E43 /* KenBurns.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45863C1A1A9EBB9F00749E43 /* KenBurns.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45863C3A1A9EBBC500749E43 /* JBKenBurnsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AC4481148BA10400F76C22 /* JBKenBurnsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45863C3B1A9EBBC500749E43 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC4482148BA10400F76C22 /* JBKenBurnsView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45863C2F1A9EBBA000749E43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42B1795A142CCBE3006D5610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45863C191A9EBB9F00749E43;
+			remoteInfo = KenBurns;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45863C361A9EBBA000749E43 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45863C321A9EBBA000749E43 /* KenBurns.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		42AC4475148BA08300F76C22 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleViewController.h; path = Demo/ExampleViewController.h; sourceTree = SOURCE_ROOT; };
+		42AC4476148BA08300F76C22 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleViewController.m; path = Demo/ExampleViewController.m; sourceTree = SOURCE_ROOT; };
+		42AC4477148BA08300F76C22 /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExampleViewController.xib; path = Demo/ExampleViewController.xib; sourceTree = SOURCE_ROOT; };
+		42AC4478148BA08300F76C22 /* KenBurnsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KenBurnsAppDelegate.h; path = Demo/KenBurnsAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		42AC4479148BA08300F76C22 /* KenBurnsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KenBurnsAppDelegate.m; path = Demo/KenBurnsAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		42AC447F148BA0F500F76C22 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Demo/en.lproj/MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		42AC4481148BA10400F76C22 /* JBKenBurnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBKenBurnsView.h; path = KenBurns/JBKenBurnsView.h; sourceTree = SOURCE_ROOT; };
+		42AC4482148BA10400F76C22 /* JBKenBurnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBKenBurnsView.m; path = KenBurns/JBKenBurnsView.m; sourceTree = SOURCE_ROOT; };
+		42AC4484148BA12300F76C22 /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.jpeg; path = Demo/images/image1.jpeg; sourceTree = SOURCE_ROOT; };
+		42AC4485148BA12300F76C22 /* image2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.jpeg; path = Demo/images/image2.jpeg; sourceTree = SOURCE_ROOT; };
+		42AC4486148BA12300F76C22 /* image3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image3.jpeg; path = Demo/images/image3.jpeg; sourceTree = SOURCE_ROOT; };
+		42AC4487148BA12300F76C22 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image4.png; path = Demo/images/image4.png; sourceTree = SOURCE_ROOT; };
+		42AC4488148BA12300F76C22 /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image5.png; path = Demo/images/image5.png; sourceTree = SOURCE_ROOT; };
+		42AC4498148BA27C00F76C22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Demo/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		42B17963142CCBE3006D5610 /* KenBurnsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KenBurnsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42B17967142CCBE3006D5610 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		42B17969142CCBE3006D5610 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42B1796B142CCBE3006D5610 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42B17993142CD2EA006D5610 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		42BF1B5319601D7000DEB5E2 /* image0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image0.jpg; path = Demo/images/image0.jpg; sourceTree = SOURCE_ROOT; };
+		42DBE1E8148B9E7A00A0D5B1 /* KenBurns-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "KenBurns-Info.plist"; path = "Demo/KenBurns-Info.plist"; sourceTree = SOURCE_ROOT; };
+		42DBE1E9148B9E7A00A0D5B1 /* KenBurns-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KenBurns-Prefix.pch"; path = "Demo/KenBurns-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		42DBE1EA148B9E7A00A0D5B1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Demo/main.m; sourceTree = SOURCE_ROOT; };
+		45863C1A1A9EBB9F00749E43 /* KenBurns.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KenBurns.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45863C1D1A9EBB9F00749E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45863C1E1A9EBB9F00749E43 /* KenBurns.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KenBurns.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42B17960142CCBE3006D5610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B17994142CD2EA006D5610 /* QuartzCore.framework in Frameworks */,
+				42B17968142CCBE3006D5610 /* UIKit.framework in Frameworks */,
+				42B1796A142CCBE3006D5610 /* Foundation.framework in Frameworks */,
+				45863C311A9EBBA000749E43 /* KenBurns.framework in Frameworks */,
+				42B1796C142CCBE3006D5610 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45863C161A9EBB9F00749E43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42B17958142CCBE3006D5610 = {
+			isa = PBXGroup;
+			children = (
+				42B1796D142CCBE3006D5610 /* Demo */,
+				45863C1B1A9EBB9F00749E43 /* KenBurns */,
+				42B17966142CCBE3006D5610 /* Frameworks */,
+				42B17964142CCBE3006D5610 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42B17964142CCBE3006D5610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42B17963142CCBE3006D5610 /* KenBurnsDemo.app */,
+				45863C1A1A9EBB9F00749E43 /* KenBurns.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42B17966142CCBE3006D5610 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42B17993142CD2EA006D5610 /* QuartzCore.framework */,
+				42B17967142CCBE3006D5610 /* UIKit.framework */,
+				42B17969142CCBE3006D5610 /* Foundation.framework */,
+				42B1796B142CCBE3006D5610 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42B1796D142CCBE3006D5610 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				42B17981142CCBFE006D5610 /* KeyBurns Lib */,
+				42AC4478148BA08300F76C22 /* KenBurnsAppDelegate.h */,
+				42AC4479148BA08300F76C22 /* KenBurnsAppDelegate.m */,
+				42AC447E148BA0F500F76C22 /* MainWindow.xib */,
+				42AC4475148BA08300F76C22 /* ExampleViewController.h */,
+				42AC4476148BA08300F76C22 /* ExampleViewController.m */,
+				42AC4477148BA08300F76C22 /* ExampleViewController.xib */,
+				42B1796E142CCBE3006D5610 /* Supporting Files */,
+			);
+			name = Demo;
+			path = KeyBurns;
+			sourceTree = "<group>";
+		};
+		42B1796E142CCBE3006D5610 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42B1798E142CD0FC006D5610 /* Images */,
+				42DBE1E8148B9E7A00A0D5B1 /* KenBurns-Info.plist */,
+				42AC4497148BA27C00F76C22 /* InfoPlist.strings */,
+				42DBE1E9148B9E7A00A0D5B1 /* KenBurns-Prefix.pch */,
+				42DBE1EA148B9E7A00A0D5B1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42B17981142CCBFE006D5610 /* KeyBurns Lib */ = {
+			isa = PBXGroup;
+			children = (
+				42AC4481148BA10400F76C22 /* JBKenBurnsView.h */,
+				42AC4482148BA10400F76C22 /* JBKenBurnsView.m */,
+			);
+			name = "KeyBurns Lib";
+			sourceTree = "<group>";
+		};
+		42B1798E142CD0FC006D5610 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				42BF1B5319601D7000DEB5E2 /* image0.jpg */,
+				42AC4484148BA12300F76C22 /* image1.jpeg */,
+				42AC4485148BA12300F76C22 /* image2.jpeg */,
+				42AC4486148BA12300F76C22 /* image3.jpeg */,
+				42AC4487148BA12300F76C22 /* image4.png */,
+				42AC4488148BA12300F76C22 /* image5.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		45863C1B1A9EBB9F00749E43 /* KenBurns */ = {
+			isa = PBXGroup;
+			children = (
+				45863C1E1A9EBB9F00749E43 /* KenBurns.h */,
+				45863C1C1A9EBB9F00749E43 /* Supporting Files */,
+			);
+			path = KenBurns;
+			sourceTree = "<group>";
+		};
+		45863C1C1A9EBB9F00749E43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45863C1D1A9EBB9F00749E43 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		45863C171A9EBB9F00749E43 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45863C1F1A9EBB9F00749E43 /* KenBurns.h in Headers */,
+				45863C3A1A9EBBC500749E43 /* JBKenBurnsView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		42B17962142CCBE3006D5610 /* KenBurnsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42B1797E142CCBE3006D5610 /* Build configuration list for PBXNativeTarget "KenBurnsDemo" */;
+			buildPhases = (
+				42B1795F142CCBE3006D5610 /* Sources */,
+				42B17960142CCBE3006D5610 /* Frameworks */,
+				42B17961142CCBE3006D5610 /* Resources */,
+				45863C361A9EBBA000749E43 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45863C301A9EBBA000749E43 /* PBXTargetDependency */,
+			);
+			name = KenBurnsDemo;
+			productName = KeyBurns;
+			productReference = 42B17963142CCBE3006D5610 /* KenBurnsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45863C191A9EBB9F00749E43 /* KenBurns */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45863C331A9EBBA000749E43 /* Build configuration list for PBXNativeTarget "KenBurns" */;
+			buildPhases = (
+				45863C151A9EBB9F00749E43 /* Sources */,
+				45863C161A9EBB9F00749E43 /* Frameworks */,
+				45863C171A9EBB9F00749E43 /* Headers */,
+				45863C181A9EBB9F00749E43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KenBurns;
+			productName = KenBurns;
+			productReference = 45863C1A1A9EBB9F00749E43 /* KenBurns.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42B1795A142CCBE3006D5610 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Sweetbits;
+				TargetAttributes = {
+					45863C191A9EBB9F00749E43 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 42B1795D142CCBE3006D5610 /* Build configuration list for PBXProject "KenBurns" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42B17958142CCBE3006D5610;
+			productRefGroup = 42B17964142CCBE3006D5610 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42B17962142CCBE3006D5610 /* KenBurnsDemo */,
+				45863C191A9EBB9F00749E43 /* KenBurns */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42B17961142CCBE3006D5610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AC447B148BA08300F76C22 /* ExampleViewController.xib in Resources */,
+				42AC4480148BA0F500F76C22 /* MainWindow.xib in Resources */,
+				42AC4489148BA12300F76C22 /* image1.jpeg in Resources */,
+				42BF1B5419601D7000DEB5E2 /* image0.jpg in Resources */,
+				42AC448A148BA12300F76C22 /* image2.jpeg in Resources */,
+				42AC448B148BA12300F76C22 /* image3.jpeg in Resources */,
+				42AC448C148BA12300F76C22 /* image4.png in Resources */,
+				42AC448D148BA12300F76C22 /* image5.png in Resources */,
+				42AC4499148BA27C00F76C22 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45863C181A9EBB9F00749E43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42B1795F142CCBE3006D5610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42DBE1EE148B9E7A00A0D5B1 /* main.m in Sources */,
+				42AC447A148BA08300F76C22 /* ExampleViewController.m in Sources */,
+				42AC447C148BA08300F76C22 /* KenBurnsAppDelegate.m in Sources */,
+				42AC4483148BA10400F76C22 /* JBKenBurnsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45863C151A9EBB9F00749E43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45863C3B1A9EBBC500749E43 /* JBKenBurnsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45863C301A9EBBA000749E43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45863C191A9EBB9F00749E43 /* KenBurns */;
+			targetProxy = 45863C2F1A9EBBA000749E43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42AC447E148BA0F500F76C22 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42AC447F148BA0F500F76C22 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		42AC4497148BA27C00F76C22 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42AC4498148BA27C00F76C22 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42B1797C142CCBE3006D5610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		42B1797D142CCBE3006D5610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42B1797F142CCBE3006D5610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/KenBurns-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Demo/KenBurns-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		42B17980142CCBE3006D5610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/KenBurns-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Demo/KenBurns-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		45863C341A9EBBA000749E43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = KenBurns/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		45863C351A9EBBA000749E43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = KenBurns/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42B1795D142CCBE3006D5610 /* Build configuration list for PBXProject "KenBurns" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B1797C142CCBE3006D5610 /* Debug */,
+				42B1797D142CCBE3006D5610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42B1797E142CCBE3006D5610 /* Build configuration list for PBXNativeTarget "KenBurnsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B1797F142CCBE3006D5610 /* Debug */,
+				42B17980142CCBE3006D5610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45863C331A9EBBA000749E43 /* Build configuration list for PBXNativeTarget "KenBurns" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45863C341A9EBBA000749E43 /* Debug */,
+				45863C351A9EBBA000749E43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42B1795A142CCBE3006D5610 /* Project object */;
+}
