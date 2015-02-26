@@ -27,7 +27,8 @@ final class KeywordSlideViewController: UIViewController {
 						Debug.assertMainThread()
 						
 						if let vs = imageItems {
-							self.slideVC.queueImageItems(vs)
+							let	us	=	vs.map({ v in v.URL })
+							self.slideVC.queueImageURLs(us)
 						} else {
 							UIAlertView(title: nil, message: "Could not download image list.", delegate: nil, cancelButtonTitle: "Close").show()
 						}
@@ -57,11 +58,6 @@ final class KeywordSlideViewController: UIViewController {
 			])
 		
 		navigationItem.rightBarButtonItem	=	slideVC.navigationItem.rightBarButtonItem
-		
-		////
-		
-		internals.owner		=	self
-		slideVC.delegate	=	internals
 	}
 	override func viewWillDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
@@ -71,7 +67,6 @@ final class KeywordSlideViewController: UIViewController {
 	
 	////
 	
-	private let internals		=	InternalController()
 	private let	slideVC			=	SlideViewController3()
 	private var transmission	=	nil as Transmission?
 }
@@ -89,16 +84,6 @@ final class KeywordSlideViewController: UIViewController {
 
 
 
-
-
-private final class InternalController {
-	weak var owner: KeywordSlideViewController?
-}
-extension InternalController: SlideViewController3Delegate {
-	func slideViewController3DidChangeTitle(s:String) {
-		owner!.navigationItem.title	=	s
-	}
-}
 
 
 

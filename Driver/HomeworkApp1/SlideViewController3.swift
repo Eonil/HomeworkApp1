@@ -30,10 +30,10 @@ protocol SlideViewController3Delegate: class {
 final class SlideViewController3: UIViewController {
 	weak var delegate: SlideViewController3Delegate?
 	
-	func queueImageItems(imageItems:[Client.ImageItem]) {
+	func queueImageURLs(imageURLs:[NSURL]) {
 		Debug.assertMainThread()
 		
-		pushImageItems(imageItems)
+		pushImageURLs(imageURLs)
 	}
 	
 	
@@ -58,15 +58,16 @@ final class SlideViewController3: UIViewController {
 //		for g in pageVC.gestureRecognizers {
 //			self.view.addGestureRecognizer(g as! UIGestureRecognizer)
 //		}
-		pushImageItems([])
+		pushImageURLs([])
 		
 		navigationItem.rightBarButtonItem	=	UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: reactions, action: "userDidTapSaveButton:")
 		
 		////
 		
-		reactions.owner		=	self
-		pageVC.dataSource	=	reactions
-		pageVC.delegate		=	reactions
+		reactions.owner			=	self
+		pageVC.dataSource		=	reactions
+		pageVC.delegate			=	reactions
+		serialLoader.delegate	=	reactions
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -90,21 +91,20 @@ final class SlideViewController3: UIViewController {
 	
 	////
 	
+	private let	serialLoader		=	SerialLoader()
 	private var	stepper				=	nil as SteppingTimerController?
 	private var	navbarOriginHidden	=	false
-//	private var	imageURLShuffler	=	ValueShuffler<NSURL>()
-	private var futureImageItems	=	[] as [Client.ImageItem]
+	private var futureImageURLs		=	[] as [NSURL]
 	private let pageVC				=	UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
 	private let reactions			=	ReactionController()
 	
-	private func pushImageItems(ms:[Client.ImageItem]) {
-//		imageURLShuffler.pushSourcePoolValues(us)
-		let	us1	=	sortRandomly(ms)
-		self.futureImageItems.extend(us1)
+	private func pushImageURLs(us:[NSURL]) {
+		let	us1	=	sortRandomly(us)
+		self.futureImageURLs.extend(us1)
 		if pageVC.viewControllers.count == 0 {
-			if let f = futureImageItems.first {
+			if let f = futureImageURLs.first {
 				let	vc	=	SlidePageViewController()
-				vc.imageItem	=	f
+				vc.imageURL	=	f
 				pageVC.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
 			}
 		}
@@ -129,8 +129,8 @@ private extension SlideViewController3 {
 
 private extension SlideViewController3 {
 	func findIndexOfImageItemForURL(u:NSURL) -> Int? {
-		for i in 0..<futureImageItems.count {
-			if futureImageItems[i].URL == u {
+		for i in 0..<futureImageURLs.count {
+			if futureImageURLs[i] == u {
 				return	i
 			}
 		}
@@ -176,6 +176,8 @@ private extension SlideViewController3 {
 private final class ReactionController: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate, SteppingTimerControllerDelegate {
 	weak var owner: SlideViewController3?
 	
+	var	saveTransmissionHolder:Transmission?
+	
 	@objc
 	func userDidTapOnSlideDisplayView(AnyObject?) {
 		owner!.navigationController!.setNavigationBarHidden(owner!.navigationController!.navigationBarHidden == false, animated: true)
@@ -184,11 +186,25 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 	@objc
 	func userDidTapSaveButton(AnyObject?) {
 		let vc	=	owner!.pageVC.viewControllers[0] as! SlidePageViewController
-
-		dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-			let	m	=	UIImage(data: NSData(contentsOfURL: vc.imageItem!.URL)!)!
-			UIImageWriteToSavedPhotosAlbum(m, nil, nil, nil)
-		}
+		
+		owner!.stopSteppingTimer()
+		let	av	=	UIAlertView(title: nil, message: "Saving...", delegate: nil, cancelButtonTitle: nil)
+		av.show()
+		
+		//	TODO: Currently downloads again... uncancellable...
+		//	Cache needed for optimisation, but no time to make one.
+		//	I wish system cache to work properly.
+		let	t	=	Client.fetchImageAtURL(vc.imageURL!, handler: { (image) -> () in
+			dispatch_async(dispatch_get_main_queue()) {
+				if let m = image {
+					UIImageWriteToSavedPhotosAlbum(m, nil, nil, nil)
+				} else {
+				}
+				av.dismissWithClickedButtonIndex(0, animated: true)
+				self.owner!.startSteppingTimer()
+			}
+		})
+		self.saveTransmissionHolder	=	t
 	}
 	
 	@objc
@@ -205,13 +221,13 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 	@objc
 	func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
 		let	vc	=	viewController as! SlidePageViewController
-		if let u = vc.imageItem {
-			let	u	=	vc.imageItem!
-			let	idx	=	owner!.findIndexOfImageItemForURL(u.URL)!
+		if let u = vc.imageURL {
+			let	u	=	vc.imageURL!
+			let	idx	=	owner!.findIndexOfImageItemForURL(u)!
 			if idx > 0 {
-				let	u1	=	owner!.futureImageItems[idx-1]
+				let	u1	=	owner!.futureImageURLs[idx-1]
 				let	vc1	=	SlidePageViewController()
-				vc1.imageItem	=	u1
+				vc1.imageURL	=	u1
 				return	vc1
 			}
 		}
@@ -221,13 +237,13 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 	@objc
 	func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
 		let	vc	=	viewController as! SlidePageViewController
-		if let u = vc.imageItem {
-			let	u	=	vc.imageItem!
-			let	idx	=	owner!.findIndexOfImageItemForURL(u.URL)!
-			if idx < (owner!.futureImageItems.count-1) {
-				let	u1	=	owner!.futureImageItems[idx+1]
+		if let u = vc.imageURL {
+			let	u	=	vc.imageURL!
+			let	idx	=	owner!.findIndexOfImageItemForURL(u)!
+			if idx < (owner!.futureImageURLs.count-1) {
+				let	u1	=	owner!.futureImageURLs[idx+1]
 				let	vc1	=	SlidePageViewController()
-				vc1.imageItem	=	u1
+				vc1.imageURL	=	u1
 				return	vc1
 			}
 		}
@@ -244,9 +260,23 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 	}
 }
 
+extension ReactionController: SerialLoaderDelegate {
+	private func serialLoaderDidSucceedToLoadImage(image: UIImage, atURL: NSURL) {
+		
+	}
+	private func serualLoaderDidFailToLoadImageAtURL(u: NSURL) {
+		
+	}
+}
 
-
-
+extension ReactionController: SlidePageViewControllerDelegate {
+	func slidePageViewControllerWillInitiateImageLoading() {
+		owner!.stopSteppingTimer()
+	}
+	func slidePageViewControllerDidCompleteImageLoading() {
+		owner!.startSteppingTimer()
+	}
+}
 
 
 
@@ -295,10 +325,10 @@ private final class SteppingTimerController {
 		timer.invalidate()
 	}
 	
-	func resetWaitingTime() {
-		timer.invalidate()
-		timer	=	NSTimer.scheduledTimerWithTimeInterval(DEFAULT_TIMEOUT, target: timerDelegate, selector: "onTime:", userInfo: nil, repeats: false)
-	}
+//	func resetWaitingTime() {
+//		timer.invalidate()
+//		timer	=	NSTimer.scheduledTimerWithTimeInterval(DEFAULT_TIMEOUT, target: timerDelegate, selector: "onTime:", userInfo: nil, repeats: false)
+//	}
 	
 	private var	timer: NSTimer
 	private let	timerDelegate	=	TimerDelegate()
@@ -310,12 +340,74 @@ private final class SteppingTimerController {
 		func onTime(AnyObject?) {
 			Debug.log("onTime")
 			owner!.delegate!.steppingTimerControllerOnTime()
-			owner!.resetWaitingTime()
+//			owner!.resetWaitingTime()
 		}
 	}
 	
 	private let	DEFAULT_TIMEOUT	=	NSTimeInterval(3)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private protocol SerialLoaderDelegate: class {
+	func serialLoaderDidSucceedToLoadImage(image:UIImage, atURL:NSURL)
+	func serualLoaderDidFailToLoadImageAtURL(u:NSURL)
+}
+private final class SerialLoader {
+	weak var delegate: SerialLoaderDelegate?
+	func queueURLs(us:[NSURL]) {
+		for u in us {
+			let	t	=	Client.fetchImageAtURL(u) { [weak self] image in
+				dispatch_async(dispatch_get_main_queue()) {
+					if let m = image {
+						self?.delegate!.serialLoaderDidSucceedToLoadImage(m, atURL: u)
+					} else {
+						self?.delegate!.serualLoaderDidFailToLoadImageAtURL(u)
+					}
+				}
+			}
+			transmissions.append(t)
+		}
+	}
+	func cancelAll() {
+		for t in transmissions {
+			t.cancel()
+		}
+		transmissions.removeAll(keepCapacity: false)
+	}
+	
+	var	transmissions	=	[] as [Transmission]
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

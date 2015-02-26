@@ -9,8 +9,15 @@
 import Foundation
 import UIKit
 
+protocol SlidePageViewControllerDelegate: class {
+	func slidePageViewControllerWillInitiateImageLoading()
+	func slidePageViewControllerDidCompleteImageLoading()
+}
+
 final class SlidePageViewController: UIViewController {
-	var	imageItem:Client.ImageItem? {
+	weak var delegate:SlidePageViewControllerDelegate?
+	
+	var	imageURL:NSURL? {
 		didSet {
 			Debug.assertMainThread()
 			assert(transmission == nil)
@@ -20,6 +27,15 @@ final class SlidePageViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let	act	=	UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+		act.setTranslatesAutoresizingMaskIntoConstraints(false)
+		act.sizeToFit()
+		self.view.addSubview(act)
+		self.view.addConstraints([
+			NSLayoutConstraint(item: act, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0),
+			NSLayoutConstraint(item: act, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0),
+			])
 		
 		imageView.contentMode	=	UIViewContentMode.ScaleAspectFill
 		imageView.clipsToBounds	=	true
@@ -34,25 +50,26 @@ final class SlidePageViewController: UIViewController {
 		
 		////
 		
-		if let v = imageItem {
-			self.navigationItem.title	=	v.title
-			self.transmission			=	Client.fetchImageAtURL(v.URL, handler: { [weak self](image:UIImage?) -> () in
+		if let u = imageURL {
+			self.delegate?.slidePageViewControllerWillInitiateImageLoading()
+			self.transmission	=	Client.fetchImageAtURL(u, handler: { [weak self](image:UIImage?) -> () in
 				dispatch_async(dispatch_get_main_queue()) { [weak self] in
 					Debug.assertMainThread()
 					
 					if let me = self {
 						me.transmission	=	nil
 						if let m = image {
-							Debug.log("SlidePageViewController downloaded image `\(m)` from URL `\(v.URL)`.")
+							Debug.log("SlidePageViewController downloaded image `\(m)` from URL `\(u)`.")
 							me.imageView.image	=	m
 						} else {
-							Debug.log("SlidePageViewController couldn't download image for URL `\(v.URL)`.")
+							Debug.log("SlidePageViewController couldn't download image for URL `\(u)`.")
 							UIAlertView(title: nil, message: "Could not download image.", delegate: nil, cancelButtonTitle: "Close").show()
 							me.imageView.image	=	nil
 						}
+						me.delegate?.slidePageViewControllerDidCompleteImageLoading()
 					}
 				}
-				})
+			})
 		} else {
 			imageView.image	=	nil
 		}
