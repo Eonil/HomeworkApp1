@@ -15,9 +15,6 @@ import UIKit
 
 
 
-protocol SlideViewController3Delegate: class {
-	func slideViewController3DidChangeTitle(s:String)
-}
 
 ///	`queueImageURLs` to add image URL list.
 ///	This object will take care of everything else.
@@ -28,8 +25,6 @@ protocol SlideViewController3Delegate: class {
 ///	**Note**
 ///	`UIPageViewController` internalised to hide details.
 final class SlideViewController3: UIViewController {
-	weak var delegate: SlideViewController3Delegate?
-	
 	func queueImageURLs(imageURLs:[NSURL]) {
 		Debug.assertMainThread()
 		
@@ -67,7 +62,7 @@ final class SlideViewController3: UIViewController {
 		reactions.owner			=	self
 		pageVC.dataSource		=	reactions
 		pageVC.delegate			=	reactions
-		serialLoader.delegate	=	reactions
+//		serialLoader.delegate	=	reactions
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -91,7 +86,7 @@ final class SlideViewController3: UIViewController {
 	
 	////
 	
-	private let	serialLoader		=	SerialLoader()
+//	private let	serialLoader		=	SerialLoader()
 	private var	stepper				=	nil as SteppingTimerController?
 	private var	navbarOriginHidden	=	false
 	private var futureImageURLs		=	[] as [NSURL]
@@ -115,13 +110,14 @@ final class SlideViewController3: UIViewController {
 
 private extension SlideViewController3 {
 	func startSteppingTimer() {
-		assert(stepper == nil)
+//		assert(stepper == nil)
+		stopSteppingTimer()
 		
 		stepper	=	SteppingTimerController()
 		stepper!.delegate	=	reactions
 	}
 	func stopSteppingTimer() {
-		assert(stepper != nil)
+//		assert(stepper != nil)
 		
 		stepper	=	nil
 	}
@@ -209,13 +205,11 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 	
 	@objc
 	func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-		
+		owner!.stopSteppingTimer()
 	}
 	@objc
 	func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-		owner!.stopSteppingTimer()
 		owner!.startSteppingTimer()
-		owner!.delegate?.slideViewController3DidChangeTitle(pageViewController.viewControllers[0].navigationItem.title!)
 	}
 	
 	@objc
@@ -228,6 +222,7 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 				let	u1	=	owner!.futureImageURLs[idx-1]
 				let	vc1	=	SlidePageViewController()
 				vc1.imageURL	=	u1
+				vc1.delegate	=	self
 				return	vc1
 			}
 		}
@@ -244,6 +239,7 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 				let	u1	=	owner!.futureImageURLs[idx+1]
 				let	vc1	=	SlidePageViewController()
 				vc1.imageURL	=	u1
+				vc1.delegate	=	self
 				return	vc1
 			}
 		}
@@ -260,20 +256,22 @@ private final class ReactionController: NSObject, UIPageViewControllerDataSource
 	}
 }
 
-extension ReactionController: SerialLoaderDelegate {
-	private func serialLoaderDidSucceedToLoadImage(image: UIImage, atURL: NSURL) {
-		
-	}
-	private func serualLoaderDidFailToLoadImageAtURL(u: NSURL) {
-		
-	}
-}
+//extension ReactionController: SerialLoaderDelegate {
+//	private func serialLoaderDidSucceedToLoadImage(image: UIImage, atURL: NSURL) {
+//		
+//	}
+//	private func serualLoaderDidFailToLoadImageAtURL(u: NSURL) {
+//		
+//	}
+//}
 
 extension ReactionController: SlidePageViewControllerDelegate {
 	func slidePageViewControllerWillInitiateImageLoading() {
+		Debug.log("slidePageViewControllerWillInitiateImageLoading")
 		owner!.stopSteppingTimer()
 	}
 	func slidePageViewControllerDidCompleteImageLoading() {
+		Debug.log("slidePageViewControllerDidCompleteImageLoading")
 		owner!.startSteppingTimer()
 	}
 }
@@ -344,7 +342,7 @@ private final class SteppingTimerController {
 		}
 	}
 	
-	private let	DEFAULT_TIMEOUT	=	NSTimeInterval(3)
+	private let	DEFAULT_TIMEOUT	=	NSTimeInterval(1)
 }
 
 
@@ -368,36 +366,36 @@ private final class SteppingTimerController {
 
 
 
-
-private protocol SerialLoaderDelegate: class {
-	func serialLoaderDidSucceedToLoadImage(image:UIImage, atURL:NSURL)
-	func serualLoaderDidFailToLoadImageAtURL(u:NSURL)
-}
-private final class SerialLoader {
-	weak var delegate: SerialLoaderDelegate?
-	func queueURLs(us:[NSURL]) {
-		for u in us {
-			let	t	=	Client.fetchImageAtURL(u) { [weak self] image in
-				dispatch_async(dispatch_get_main_queue()) {
-					if let m = image {
-						self?.delegate!.serialLoaderDidSucceedToLoadImage(m, atURL: u)
-					} else {
-						self?.delegate!.serualLoaderDidFailToLoadImageAtURL(u)
-					}
-				}
-			}
-			transmissions.append(t)
-		}
-	}
-	func cancelAll() {
-		for t in transmissions {
-			t.cancel()
-		}
-		transmissions.removeAll(keepCapacity: false)
-	}
-	
-	var	transmissions	=	[] as [Transmission]
-}
+//
+//private protocol SerialLoaderDelegate: class {
+//	func serialLoaderDidSucceedToLoadImage(image:UIImage, atURL:NSURL)
+//	func serualLoaderDidFailToLoadImageAtURL(u:NSURL)
+//}
+//private final class SerialLoader {
+//	weak var delegate: SerialLoaderDelegate?
+//	func queueURLs(us:[NSURL]) {
+//		for u in us {
+//			let	t	=	Client.fetchImageAtURL(u) { [weak self] image in
+//				dispatch_async(dispatch_get_main_queue()) {
+//					if let m = image {
+//						self?.delegate!.serialLoaderDidSucceedToLoadImage(m, atURL: u)
+//					} else {
+//						self?.delegate!.serualLoaderDidFailToLoadImageAtURL(u)
+//					}
+//				}
+//			}
+//			transmissions.append(t)
+//		}
+//	}
+//	func cancelAll() {
+//		for t in transmissions {
+//			t.cancel()
+//		}
+//		transmissions.removeAll(keepCapacity: false)
+//	}
+//	
+//	var	transmissions	=	[] as [Transmission]
+//}
 
 
 
